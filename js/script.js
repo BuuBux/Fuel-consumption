@@ -13,6 +13,7 @@ const wrapper = document.querySelector('.wrapper');
 const scoreOne = document.querySelector('.avgScore');
 const scoreTwo = document.querySelector('.tankScore');
 const scoreThree = document.querySelector('.roadScore');
+const body = document.querySelector('.wrapper');
 
 function selectOption(e) {
     box = [...boxes];
@@ -67,6 +68,21 @@ function travelCost(e) {
     `;
 }
 
+function resetBoxes(e) {
+    box = [...boxes];
+    if (!e.target.classList.contains('wrapper'))
+    {
+
+    }else{
+        for(i=0; i<box.length; i++){
+            if(box[i].classList.contains('active'))
+            {
+                box[i].classList.remove('active', 'toggle');
+            }
+        }    
+    }
+}
+
 /*function exitOption(e) {
     e.stopPropagation();
     box = [...boxes];
@@ -88,3 +104,7 @@ btnTwo.addEventListener('click', tankFilled, {
 btnThree.addEventListener('click', travelCost, {
     capture: false
 });
+
+body.addEventListener('click', resetBoxes, {
+    capture: false
+})
