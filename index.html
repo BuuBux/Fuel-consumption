@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fuel consumption</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&amp;subset=latin-ext" rel="stylesheet"> 
+</head>
+<body>
+    <div class="wrapper">
+        <div class="select">
+            <div class="fuel-cost">
+                <p> Cena paliwa </p>
+                <input type='number' step="any" name='fuel'/>
+            </div>
+            <div class="box avg-fuel">
+                <img src="img/car.svg" alt='Average fuel consumption' />
+
+                <section>
+                    <p> Przejechane kilometry</p>
+                    <input type='number' step="any" name='traveled' />
+                </section>
+
+                <section>
+                    <p> Zużytę paliwo</p>
+                    <input type='number' step="any" name='wasted' />
+                </section>
+
+                <button type="button" name='avg-score'>Oblicz</button> 
+
+                <section class="avgScore"></section>
+            </div>
+            <div class="box cost-tank">
+                <img src="img/fuel-station.svg" alt="Cost of full fuel tank" />
+
+                <section>
+                    <p> Wielkość baku</p>
+                    <input type="number" step="any" name="tank" min='1' />
+                </section>
+
+                <section>
+                    <p> Średnie spalanie</p>
+                        <input type="number" step="any" name="avg" min='1'/>
+                </section>
+
+                <button type="button" name='tank-score'>Oblicz</button>
+
+                <section class="tankScore"></section>
+            </div>
+            <div class="box road-cost">
+                <img src="img/world-location.svg" alt="Check how much road will cost" />
+                <section>
+                    <p> Średnie spalanie</p>
+                    <input type='number' step="any" name='avg-road' min='1' />
+                </section>
+
+                <section>
+                    <p> Długośc trasy</p>
+                    <input type='number' step="any" name='road' min='1' />
+                </section>
+
+                <button type="button" name='road-score'>Oblicz</button>
+                
+                <section class="roadScore"></section>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.wrapper{
+    display:flex;
+    min-height: 100vh;
+    background-color: #d5cbb2;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    flex-wrap: wrap;
+}
+
+.select{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 991px;
+    width: 100%;
+}
+
+.box{
+    display: flex;
+    flex:1 1 auto;
+    text-align: center;
+    min-height: 300px;
+    transition: .7s;
+}
+
+.box:hover{
+    cursor:pointer;
+}
+
+.box.active{
+    flex-grow: 3;
+    box-shadow: 0px 0 5px 5px rgba(0, 0, 0, 0.3);
+    z-index: 9;
+}
+
+.avg-fuel{
+    background: #c0b18c;
+}
+
+.cost-tank{
+    background: #ac9766;          
+}
+
+.road-cost{
+    background: #656b70;
+}
+
+.box p{
+    display: none;
+    opacity: 0;
+    font-size: 22px;
+    transition: .7s;
+}
+
+.box input{
+    opacity:0;
+    display: none;
+    transition: .7s;
+}
+
+.box img{
+    max-width: 80px;
+    width: 100%;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    opacity: 1;
+    transition: all 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+} 
+
+.box section{
+    display: none;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.7s;
+}
+
+.box.active.toggle section {display:block; opacity: 1;}
+
+.box button{
+    display:none;
+    opacity: 0;
+    transition: .7s;
+    align-self: center;
+    padding: 14px 35px 10px 35px;
+    border: 0;
+    background: #060f18;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.box button:hover{
+    cursor: pointer;
+    background: rgb(6, 15, 24, 0.7);
+}
+
+.box.active.toggle{
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.box.active img{
+    opacity: 0;
+}
+
+.box.active.toggle img{
+    display: none;
+}
+
+.box.active p{
+    display:block;
+}
+
+.box.active.toggle p{
+    opacity: 1;
+}
+
+.box.active input{
+    display: flex;
+    margin: 0 auto;
+}
+
+.box.active.toggle input{
+    opacity: 1;
+}
+
+.box.active button{
+    display:block;
+}
+
+.box.active.toggle button{
+    opacity: 1;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+section{
+    margin: 0 0 20px 0;
+}
+
+.avgScore, .tankScore, .roadScore{
+    margin: 20px 0 0 0;
+    display:none;
+    opacity:0;
+    transition: .7s;
+}
+
+.avgScore p, .tankScore p, .roadScore p{
+    font-size: 0;
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+
+.box.active .avgScore, .box.active .tankScore, .box.active .roadScore{
+    display:block;
+}
+
+.box.active.toggle .avgScore, .box.active.toggle .tankScore, .box.active.toggle .roadScore{
+    opacity: 1;
+}
+
+.box.active.toggle .avgScore p, .box.active.toggle .tankScore p, .box.active.toggle .roadScore p{
+    font-size: 18px;
+}
+
+.fuel-cost{
+    flex-basis: 100%;
+    background: #0c1f31;
+    padding: 35px 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.fuel-cost p{
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+input{
+    background: transparent;
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    text-align: center;
+    border-bottom: 3px dotted #fff;
+    color: #fff;
+    font-size: 24px;
+    max-width: 125px;
+}
+
+@media (max-width: 595px){
+    .road-cost{
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 450px){
+    .box{
+        flex: 1 1 100%;
+        padding: 35px 15px;
+    }
+    .box.active img{
+        transform: translateY(-220px);
+    }
+}
